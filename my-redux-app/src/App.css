@@ -1,0 +1,277 @@
+#root {
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 38px 20px;
+  color: #effcff;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(0, 255, 204, 0.22), transparent 28%),
+    radial-gradient(circle at 85% 12%, rgba(255, 92, 180, 0.24), transparent 30%),
+    radial-gradient(circle at 50% 88%, rgba(165, 255, 67, 0.18), transparent 34%),
+    linear-gradient(145deg, #08111f 0%, #17113d 45%, #062f35 100%);
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.app::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.8) 1px, transparent 1px),
+    radial-gradient(circle, rgba(0, 255, 204, 0.6) 1px, transparent 1px);
+  background-size: 90px 90px, 140px 140px;
+  background-position: 0 0, 45px 55px;
+  opacity: 0.25;
+}
+
+.space-header,
+.dashboard {
+  position: relative;
+  z-index: 1;
+}
+
+.space-header {
+  max-width: 1120px;
+  margin: 0 auto 30px;
+  padding: 36px 30px;
+  text-align: center;
+  border: 4px solid #52ffe0;
+  border-radius: 34px 34px 10px 34px;
+  background:
+    linear-gradient(135deg, rgba(23, 20, 72, 0.96), rgba(7, 56, 66, 0.96)),
+    #101b38;
+  box-shadow:
+    0 16px 0 #031018,
+    0 0 40px rgba(82, 255, 224, 0.28);
+}
+
+.badge {
+  display: inline-block;
+  margin: 0 0 14px;
+  padding: 8px 16px;
+  color: #061018;
+  background: #a9ff3f;
+  border: 3px solid #061018;
+  border-radius: 999px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  box-shadow: 5px 6px 0 #000;
+}
+
+h1 {
+  margin: 0;
+  color: #ffe45e;
+  font-size: clamp(42px, 8vw, 82px);
+  line-height: 0.95;
+  letter-spacing: -2px;
+  text-shadow:
+    4px 4px 0 #ff4fab,
+    8px 8px 0 #000;
+}
+
+.subtitle {
+  margin: 22px 0 0;
+  color: #bafcff;
+  font-size: 20px;
+}
+
+.subtitle strong {
+  color: #ffffff;
+}
+
+.dashboard {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 330px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.left-panel {
+  display: grid;
+  gap: 22px;
+}
+
+.ship-card,
+.control-panel,
+.delivery-list {
+  border: 4px solid #061018;
+  background: rgba(239, 252, 255, 0.92);
+  color: #07131e;
+  box-shadow: 10px 12px 0 #000;
+}
+
+.ship-card {
+  padding: 24px;
+  border-radius: 28px 12px 28px 18px;
+}
+
+.control-panel {
+  padding: 24px;
+  border-radius: 14px 28px 18px 28px;
+  background: #ffcf5c;
+}
+
+.ship-card h2,
+.control-panel h2,
+.delivery-list h2 {
+  margin-top: 0;
+  color: #19104a;
+  font-size: 30px;
+}
+
+.ship-card p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.counter {
+  margin-top: 18px;
+  padding: 14px;
+  border: 3px solid #061018;
+  border-radius: 16px;
+  background: #a9ff3f;
+  font-weight: 800;
+}
+
+.control-panel button,
+.card-actions button {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px 14px;
+  border: 3px solid #061018;
+  border-radius: 999px;
+  color: #061018;
+  background: #52ffe0;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 4px 5px 0 #000;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.control-panel button:nth-of-type(2) {
+  background: #ff6fb7;
+}
+
+.control-panel button:nth-of-type(3) {
+  background: #f4f4ff;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 6px 8px 0 #000;
+}
+
+button:active {
+  transform: translateY(1px);
+  box-shadow: 2px 3px 0 #000;
+}
+
+.delivery-list {
+  padding: 26px;
+  border-radius: 30px 12px 34px 16px;
+  background:
+    radial-gradient(circle at top right, rgba(82, 255, 224, 0.34), transparent 34%),
+    rgba(239, 252, 255, 0.94);
+}
+
+.delivery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.delivery-card {
+  padding: 20px;
+  border: 4px solid #061018;
+  border-radius: 24px 12px 24px 18px;
+  background: #fff8c9;
+  box-shadow: 7px 8px 0 #000;
+  transform: rotate(-0.6deg);
+}
+
+.delivery-card:nth-child(even) {
+  transform: rotate(0.6deg);
+  background: #d8fff8;
+}
+
+.delivery-card.selected {
+  outline: 5px solid #ff4fab;
+  background: #ffe45e;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.card-top h3 {
+  margin: 0;
+  color: #19104a;
+  font-size: 26px;
+}
+
+.card-top span {
+  padding: 6px 10px;
+  border: 3px solid #061018;
+  border-radius: 999px;
+  background: #ff6fb7;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.package-name {
+  color: #0e6c64;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.card-actions {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+@media (max-width: 900px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .delivery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .app {
+    padding: 26px 14px;
+  }
+
+  .space-header {
+    padding: 28px 18px;
+  }
+
+  .delivery-list,
+  .ship-card,
+  .control-panel {
+    padding: 20px;
+  }
+}
